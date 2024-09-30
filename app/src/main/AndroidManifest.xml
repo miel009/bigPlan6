@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Actividad de bienvenida -->
+        <!-- Actividad de bienvenida-->
         <activity
             android:name=".WelcomeActivity"
             android:exported="true">
