@@ -12,30 +12,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BigPlan"
         tools:targetApi="35">
-
+        <activity
+            android:name=".ScrollingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/Theme.BigPlan.NoActionBar" />
         <!-- Actividad principal -->
         <activity
             android:name=".MainActivity1"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Actividad de bienvenida-->
+        </activity> <!-- Actividad de bienvenida -->
         <activity
             android:name=".WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
-
-   
-
