@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,27 +13,34 @@
         android:theme="@style/Theme.BigPlan"
         tools:targetApi="35">
 
-        <!-- Actividad principal -->
-
+        <!-- Actividad principal (pantalla de inicio) -->
         <activity
             android:name=".MainActivity1"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Actividad de bienvenida -->
+        </activity>
+
+        <!-- Actividad de bienvenida -->
         <activity
             android:name=".WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <!-- Actividad de registro de cuenta -->
+        <activity
+            android:name=".RegisterAccount"
+            android:exported="true">
+            <!-- No es necesario un intent-filter porque no es la actividad de lanzamiento -->
+        </activity>
+
+        <!-- Actividad de desplazamiento (pantalla principal después de iniciar sesión) -->
         <activity
             android:name=".ScrollingActivity"
             android:exported="true"
@@ -43,6 +51,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".CafeteriasActivity" />
 
     </application>
 

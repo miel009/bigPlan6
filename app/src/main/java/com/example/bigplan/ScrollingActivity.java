@@ -1,19 +1,39 @@
 package com.example.bigplan;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.bigplan.databinding.ActivityScrollingBinding;
+import androidx.appcompat.widget.SearchView;
 
 public class ScrollingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_scrolling); // Cambiado para cargar el diseño correcto
 
-        // Infla el diseño con el Binding
-        ActivityScrollingBinding binding = ActivityScrollingBinding.inflate(getLayoutInflater());
+        // Configuración del SearchView
+        SearchView searchView = findViewById(R.id.searchView);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // Redirigir si el usuario busca "Cafeterías"
+                if (query.equalsIgnoreCase("Cafeterías")) {
+                    Intent intent = new Intent(ScrollingActivity.this, CafeteriasActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(ScrollingActivity.this, "No hay resultados para: " + query, Toast.LENGTH_SHORT).show();
+                }
+                return false;
+            }
 
-        // Establece el layout de la actividad, asegurándote de que esté configurado para desplazar
-        setContentView(binding.getRoot());
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Aquí puedes manejar la lógica mientras el usuario escribe, si es necesario.
+                return false;
+            }
+        });
     }
 }
