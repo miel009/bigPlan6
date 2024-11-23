@@ -20,7 +20,7 @@ public class ScrollingActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 // Redirigir si el usuario busca "Cafeterías"
-                if (query.equalsIgnoreCase("Cafeterías")) {
+                if (query.equalsIgnoreCase("Cafeterias")) {
                     Intent intent = new Intent(ScrollingActivity.this, CafeteriasActivity.class);
                     startActivity(intent);
                 } else {

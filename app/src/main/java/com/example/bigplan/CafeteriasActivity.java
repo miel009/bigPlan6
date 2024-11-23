@@ -20,8 +20,9 @@ public class CafeteriasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cafeterias);
 
         // Inicializar RecyclerView
-        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.searchView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
         // Inicializar la lista de cafeterías
         cafeteriaList = new ArrayList<>();
