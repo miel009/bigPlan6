@@ -57,4 +57,28 @@
 
     </application>
 
+
+    <!-- Actividad de detalles -->
+    <activity
+        android:name=".DetalleActivity"
+        android:exported="true"
+        android:label="@string/title_activity_detalle"
+        android:theme="@style/Theme.BigPlan.NoActionBar">
+        <intent-filter>
+            <action android:name="com.example.bigplan.action.DETALLE" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
+
+    <!-- Actividad de favoritos -->
+    <activity
+        android:name=".FavoritosActivity"
+        android:exported="true"
+        android:label="@string/title_activity_favoritos"
+        android:theme="@style/Theme.BigPlan.NoActionBar">
+        <intent-filter>
+            <action android:name="com.example.bigplan.action.FAVORITOS" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
 </manifest>

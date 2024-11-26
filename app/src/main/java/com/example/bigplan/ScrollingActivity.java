@@ -10,11 +10,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ScrollingActivity extends AppCompatActivity {
 
     private List<Place> places = new ArrayList<>();
     private PlaceAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +76,10 @@ public class ScrollingActivity extends AppCompatActivity {
         adapter = new PlaceAdapter(this, filtered);
         ((RecyclerView) findViewById(R.id.recyclerView)).setAdapter(adapter);
     }
+
+
+
+
 }
 
 
