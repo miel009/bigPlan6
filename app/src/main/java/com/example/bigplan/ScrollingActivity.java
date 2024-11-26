@@ -34,6 +34,7 @@ public class ScrollingActivity extends AppCompatActivity {
         // Configuración del RecyclerView
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         adapter = new PlaceAdapter(this, places);
         recyclerView.setAdapter(adapter);
 

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET"/>
 
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -18,10 +19,7 @@
         <activity
             android:name=".MainActivity1"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
 
         <!-- Actividad de bienvenida -->
@@ -53,32 +51,37 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".CafeteriasActivity" />
+        <activity
+            android:name=".CafeteriasActivity"
+            android:exported="true" />
+
+        <!-- Actividad de detalles -->
+        <activity
+            android:name=".DetalleActivity"
+            android:exported="true"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/Theme.BigPlan.NoActionBar">
+            <intent-filter>
+                <action android:name="com.example.bigplan.action.DETALLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
+        <!-- Actividad de favoritos -->
+        <activity
+            android:name=".FavoritesActivity"
+            android:exported="true"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/Theme.BigPlan.NoActionBar">
+            <intent-filter>
+                <action android:name="com.example.bigplan.action.FAVORITOS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
 
     </application>
 
-
-    <!-- Actividad de detalles -->
-    <activity
-        android:name=".DetalleActivity"
-        android:exported="true"
-        android:label="@string/title_activity_detalle"
-        android:theme="@style/Theme.BigPlan.NoActionBar">
-        <intent-filter>
-            <action android:name="com.example.bigplan.action.DETALLE" />
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
-    </activity>
-
-    <!-- Actividad de favoritos -->
-    <activity
-        android:name=".FavoritosActivity"
-        android:exported="true"
-        android:label="@string/title_activity_favoritos"
-        android:theme="@style/Theme.BigPlan.NoActionBar">
-        <intent-filter>
-            <action android:name="com.example.bigplan.action.FAVORITOS" />
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
-    </activity>
 </manifest>

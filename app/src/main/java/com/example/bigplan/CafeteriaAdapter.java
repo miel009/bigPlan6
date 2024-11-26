@@ -1,48 +1,55 @@
 package com.example.bigplan;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
-public class CafeteriaAdapter extends RecyclerView.Adapter<CafeteriaAdapter.ViewHolder> {
+public class CafeteriaAdapter extends RecyclerView.Adapter<CafeteriaAdapter.CafeteriaViewHolder> {
 
-    private List<Cafeteria> cafeteriaList;
+    private final List<Cafeteria> cafeterias;
+    private final OnCafeteriaClickListener onCafeteriaClicked;
 
-    public CafeteriaAdapter(List<Cafeteria> cafeteriaList) {
-        this.cafeteriaList = cafeteriaList;
+    // Interfaz para manejar clics
+    public interface OnCafeteriaClickListener {
+        void onCafeteriaClick(Cafeteria cafeteria);
+    }
+
+    public CafeteriaAdapter(List<Cafeteria> cafeterias, OnCafeteriaClickListener onCafeteriaClicked) {
+        this.cafeterias = cafeterias;
+        this.onCafeteriaClicked = onCafeteriaClicked;
+    }
+
+    public static class CafeteriaViewHolder extends RecyclerView.ViewHolder {
+        public final TextView nameTextView;
+
+        public CafeteriaViewHolder(@NonNull View view) {
+            super(view);
+            nameTextView = view.findViewById(android.R.id.text1);
+        }
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CafeteriaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_cafeteria, parent, false);
-        return new ViewHolder(view);
+                .inflate(android.R.layout.simple_list_item_1, parent, false);
+        return new CafeteriaViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Cafeteria cafeteria = cafeteriaList.get(position);
-        holder.tvNombreCafeteria.setText(cafeteria.getNombre());
-        holder.tvDireccionCafeteria.setText(cafeteria.getDireccion());
+    public void onBindViewHolder(@NonNull CafeteriaViewHolder holder, int position) {
+        Cafeteria cafeteria = cafeterias.get(position);
+        holder.nameTextView.setText(cafeteria.getNombre());
+        holder.itemView.setOnClickListener(view -> onCafeteriaClicked.onCafeteriaClick(cafeteria));
     }
 
     @Override
     public int getItemCount() {
-        return cafeteriaList.size();
-    }
-
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvNombreCafeteria, tvDireccionCafeteria;
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            tvNombreCafeteria = itemView.findViewById(R.id.tvNombreCafeteria);
-            tvDireccionCafeteria = itemView.findViewById(R.id.tvDireccionCafeteria);
-        }
+        return cafeterias.size();
     }
 }

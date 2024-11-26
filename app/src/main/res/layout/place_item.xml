@@ -6,17 +6,19 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/nameTextView"
+    <ImageView
+        android:id="@+id/ivImage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@android:color/black" />
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/panerarosa" />
 
     <TextView
-        android:id="@+id/addressTextView"
+        android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="@android:color/darker_gray" />
+        android:text="Title"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingTop="8dp" />
 </LinearLayout>

@@ -1,33 +1,29 @@
 package com.example.bigplan;
 
 public class Cafeteria {
+    private String name;
+    private String address;
 
-    private String nombre;
-    private String direccion;
-
-    // Constructor
-    public Cafeteria(String nombre, String direccion) {
-        this.nombre = nombre;
-        this.direccion = direccion;
+    public Cafeteria(String name, String address) {
+        this.name = name;
+        this.address = address;
     }
 
-    // Getters
+    // Getters y setters
     public String getNombre() {
-        return nombre;
+        return name;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public void setNombre(String name) {
+        this.name = name;
     }
 
-    // Setters
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setAddress(String address) {
+        this.address = address;
     }
-
 
 }

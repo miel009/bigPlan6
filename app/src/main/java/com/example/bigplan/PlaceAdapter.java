@@ -1,69 +1,65 @@
 package com.example.bigplan;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import com.example.bigplan.Place;
+import com.example.bigplan.R;
 
 import java.util.List;
 
 public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHolder> {
+    private Context context;
+    private List<Place> placeList;
 
-    private final Context context;
-    private final List<Place> places;
-
-    public PlaceAdapter(Context context, List<Place> places) {
+    public PlaceAdapter(Context context, List<Place> placeList) {
         this.context = context;
-        this.places = places;
+        this.placeList = placeList;
     }
 
     @NonNull
     @Override
     public PlaceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Inflar el diseño item_card.xml
-        View view = LayoutInflater.from(context).inflate(R.layout.item_card, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.place_item, parent, false);
         return new PlaceViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PlaceViewHolder holder, int position) {
-        // Obtener el objeto Place actual
-        Place place = places.get(position);
+        Place place = placeList.get(position);
+        holder.titleTextView.setText(place.getTitle());
+        // Puedes cargar la imagen aquí si usas Glide o Picasso
+        // Ejemplo: Glide.with(context).load(place.getImageUrl()).into(holder.imageView);
 
-        // Configurar el título
-        holder.placeTitle.setText(place.getTitle());
-
-        // Cargar la imagen con Glide
-        Glide.with(context)
-                .load(place.getImageUrl())
-                .into(holder.placeImage);
+        // Manejar clics
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, DetalleActivity.class);
+            intent.putExtra("nombre", place.getTitle());
+            intent.putExtra("descripcion", "Descripción para " + place.getTitle()); // Puedes reemplazar esto con un valor real
+            context.startActivity(intent);
+        });
     }
 
     @Override
     public int getItemCount() {
-        return places.size(); // Cantidad de elementos en la lista
+        return placeList.size();
     }
 
-    // Clase ViewHolder para vincular vistas
-    public static class PlaceViewHolder extends RecyclerView.ViewHolder {
-        ImageView placeImage;
-        TextView placeTitle;
+    static class PlaceViewHolder extends RecyclerView.ViewHolder {
+        TextView titleTextView;
+        ImageView imageView;
 
         public PlaceViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            // Vincular las vistas del diseño item_card.xml
-            placeImage = itemView.findViewById(R.id.placeImage);
-            placeTitle = itemView.findViewById(R.id.placeTitle);
+            titleTextView = itemView.findViewById(R.id.tvTitle);
+            imageView = itemView.findViewById(R.id.placeImage);
         }
     }
-
-
 }

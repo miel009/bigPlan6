@@ -28,8 +28,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- Logo -->
-
         <!-- Foto del usuario -->
         <ImageView
             android:id="@+id/userAvatar"
@@ -62,8 +60,8 @@
         app:layout_constraintTop_toBottomOf="@+id/navBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-    <!-- Encabezado -->
 
+    <!-- Encabezado -->
     <TextView
         android:id="@+id/tvCafeterias"
         android:layout_width="wrap_content"
@@ -77,22 +75,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Botón Ver Favoritos -->
+    <Button
+        android:id="@+id/btnVerFavoritos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver Favoritos"
+        app:layout_constraintTop_toBottomOf="@id/tvCafeterias"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Imagenes -->
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="152dp"
         android:layout_height="150dp"
         app:srcCompat="@drawable/starbucks"
         tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="386dp" />
+        tools:layout_editor_absoluteY="449dp" />
 
-
+    <!-- Footer -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="168dp"
         android:layout_height="162dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/panerarosa"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="212dp" />
+        tools:layout_editor_absoluteX="32dp" />
 
     <LinearLayout
         android:id="@+id/footer"
@@ -103,10 +115,6 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"></LinearLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
