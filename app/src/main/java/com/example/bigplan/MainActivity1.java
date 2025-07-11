@@ -14,20 +14,20 @@ import androidx.appcompat.widget.SearchView;
 
 public class MainActivity1 extends AppCompatActivity {
 
-    // Declaración de campos de texto
+
     private EditText etEmail, etPassword;
-    private SearchView searchView;
+    //private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Inicialización de los EditText
+
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
 
-        // Configuración del botón "Crear cuenta"
+
         Button btnCreateAccount = findViewById(R.id.btnCreateAccount);
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,9 +37,10 @@ public class MainActivity1 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
-    // Método independiente para manejar el clic
+
     public void onClick(View view) {
         String email = etEmail.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
