@@ -1,5 +1,6 @@
 package com.example.bigplan;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -100,11 +101,12 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
 
+    @SuppressLint("NotifyDataSetChanged")
     private void populatePlaces() {
-        places.add(new Place("Cafetería", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEBYTar9UYnkkDcdITlEC1TetjvfOmjoZFKg&amp;s"));
+        places.add(new Place("Café Villazón", "https://lh3.googleusercontent.com/p/AF1QipNIuAuqiibicc9FGMyFwUPHGu55CXNOpJhhrFfw=w408-h543-k-no"));
         places.add(new Place("Reserva Costanera Sur", "https://www.lanoticiawebciudad.com.ar/wp-content/uploads/2017/05/Playa-La-Naci%C3%B3n1.jpg"));
-        places.add(new Place("Museo de Arte", "https://www.mibsas.com/wp-content/uploads/2017/05/malba-1-768x432.jpg"));
-        places.add(new Place("Teatro", "https://teatrocolon.org.ar/wp-content/uploads/2023/11/frente-teatro-colon.jpeg"));
+        places.add(new Place("Museo Nacional de Bellas Artes", "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrUhxnrBgpcreHVy18Ff6Q5O77Zwc_TV73mKB--CGQZujY2_OMnHBxslLlxsP6UwCsj0pKQhwvww9-Ynz_G164oUXRob6PJafAPQhhBzDHKrLS9p1CoAe-KmtrstxvnApbeTYo=w408-h306-k-no"));
+        places.add(new Place("Teatro Colón", "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np7sQYdiF_hXHJMx55pYkwKX6uvMVEUjOlMytiafJOvHz8c9l5fnlzzaHQAGBti5airaz_Tvjpz5-z5lX0KE4pPIBM5MZvbyg_KPq_fAj-Ojd66-28DOFJKEkdGAGXYCS4-Pmg5JA=w408-h271-k-no"));
         adapter.notifyDataSetChanged();
     }
 

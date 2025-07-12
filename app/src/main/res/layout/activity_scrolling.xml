@@ -10,48 +10,13 @@
     tools:context=".ScrollingActivity">
 
     <!-- NAVBAR -->
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <include
+        layout="@layout/navbar"
         android:id="@+id/navBar"
-        android:layout_width="0dp"
-        android:layout_height="88dp"
-        android:background="#2F54BE"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <ImageView
-            android:id="@+id/menuIcon"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/pngegg"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/logo1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <ImageView
-            android:id="@+id/userAvatar"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/circle_background"
-            android:src="@drawable/perfil_mujer"
-            android:scaleType="centerCrop"
-            android:clipToOutline="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- BARRA DE BÚSQUEDA -->
     <androidx.appcompat.widget.SearchView
@@ -67,107 +32,59 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- CARRUSEL -->
+
+    <!-- TÍTULO DESTACADOS -->
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/searchView"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/footerLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/searchView"
+        app:layout_constraintVertical_bias="0.018" />
 
-    <!-- TÍTULO DESTACADOS -->
+    <!-- RECYCLERVIEW -->
+
     <TextView
         android:id="@+id/highlightTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Destacados del mes"
-        android:textStyle="bold"
-        android:textSize="18sp"
         android:textColor="#000000"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/footerLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/viewPager"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintVertical_bias="0.0" />
 
-    <!-- RECYCLERVIEW -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="16dp"
         app:layout_constraintTop_toBottomOf="@id/highlightTitle"
-        app:layout_constraintBottom_toTopOf="@+id/footer"
+        app:layout_constraintBottom_toTopOf="@+id/footerLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- FOOTER -->
-    <LinearLayout
-        android:id="@+id/footer"
-        android:layout_width="0dp"
-        android:layout_height="66dp"
-        android:background="#2F54BD"
-        android:orientation="horizontal"
-        android:gravity="center"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/footerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_notification" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Notification"
-                android:textColor="#fff"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-            <ImageView
-                android:src="@drawable/ic_heart"
-                android:layout_width="24dp"
-                android:layout_height="24dp" />
-            <TextView
-                android:text="Favorites"
-                android:textSize="12sp"
-                android:textColor="#fff"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-            <ImageView
-                android:src="@drawable/ic_search"
-                android:layout_width="24dp"
-                android:layout_height="24dp" />
-            <TextView
-                android:text="Search"
-                android:textSize="12sp"
-                android:textColor="#fff"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-    </LinearLayout>
+        <include
+            layout="@layout/footer"
+            android:id="@+id/footer" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

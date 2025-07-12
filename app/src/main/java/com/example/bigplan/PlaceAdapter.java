@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.bigplan.Place;
 import com.example.bigplan.R;
 
@@ -18,7 +19,7 @@ import java.util.List;
 public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHolder> {
     private Context context;
     private List<Place> placeList;
-
+    public ImageView image;
     public PlaceAdapter(Context context, List<Place> placeList) {
         this.context = context;
         this.placeList = placeList;
@@ -35,8 +36,10 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
     public void onBindViewHolder(@NonNull PlaceViewHolder holder, int position) {
         Place place = placeList.get(position);
         holder.titleTextView.setText(place.getTitle());
-        // Puedes cargar la imagen aquí si usas Glide o Picasso
-        // Ejemplo: Glide.with(context).load(place.getImageUrl()).into(holder.imageView);
+        Glide.with(context)
+                .load(place.getImageUrl())
+                .into(holder.imageView);
+
 
         // Manejar clics
         holder.itemView.setOnClickListener(v -> {
@@ -59,7 +62,8 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
         public PlaceViewHolder(@NonNull View itemView) {
             super(itemView);
             titleTextView = itemView.findViewById(R.id.tvTitle);
-            imageView = itemView.findViewById(R.id.placeImage);
+            imageView = itemView.findViewById(R.id.ivImage);
+
         }
     }
 }

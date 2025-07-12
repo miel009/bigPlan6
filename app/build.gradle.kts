@@ -7,7 +7,7 @@ android {
 
 
     namespace = "com.example.bigplan"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.bigplan"

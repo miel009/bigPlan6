@@ -3,6 +3,7 @@ package com.example.bigplan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
     // ViewHolder para manejar los elementos de la lista
     public static class FavoritesViewHolder extends RecyclerView.ViewHolder {
         public final TextView nameTextView;
+
 
         public FavoritesViewHolder(@NonNull View view) {
             super(view);

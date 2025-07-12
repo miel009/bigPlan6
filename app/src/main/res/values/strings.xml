@@ -103,4 +103,7 @@
     <string name="user">Avatar del usuario</string>
     <string name="welcome_text">Bienvenido a Big Plan</string>
     <string name="additional_text">¿Qué esperas para hacer match con tu lugar especial?</string>
+    <string name="agregar_a_favoritos">Agregar a Favoritos</string>
+    <string name="descripci_n">Descripción</string>
+    <string name="nombre">Nombre</string>
 </resources>
