@@ -28,7 +28,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
     @NonNull
     @Override
     public PlaceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.place_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_card, parent, false);
         return new PlaceViewHolder(view);
     }
 
@@ -42,10 +42,13 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
 
 
         // Manejar clics
+        //DetalleActivity
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetalleActivity.class);
             intent.putExtra("nombre", place.getTitle());
-            intent.putExtra("descripcion", "Descripción para " + place.getTitle()); // Puedes reemplazar esto con un valor real
+
+            intent.putExtra("descripcion", place.getDescripcion());
+
             context.startActivity(intent);
         });
     }
@@ -61,8 +64,8 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
 
         public PlaceViewHolder(@NonNull View itemView) {
             super(itemView);
-            titleTextView = itemView.findViewById(R.id.tvTitle);
-            imageView = itemView.findViewById(R.id.ivImage);
+            titleTextView = itemView.findViewById(R.id.placeTitle);
+            imageView = itemView.findViewById(R.id.placeImage);
 
         }
     }

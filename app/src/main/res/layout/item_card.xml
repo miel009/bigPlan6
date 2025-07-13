@@ -4,30 +4,65 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp" >
-
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="2dp"
+    android:backgroundTint="#FFD700"
+    android:padding="4dp">
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="5dp"
+        android:background="@drawable/card_background">
 
-        <!-- Imagen del lugar -->
-        <ImageView
+
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/placeImage"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop" />
+            android:layout_width="98dp"
+            android:layout_height="84dp"
+            android:layout_marginEnd="12dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ImageRoundedCorners" />
 
-        <!-- Título del lugar -->
-        <TextView
-            android:id="@+id/placeTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="78dp"
+            android:layout_margin="5dp"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:cardCornerRadius="5dp">
+
+            <TextView
+                android:id="@+id/placeTitle"
+                android:layout_width="209dp"
+                android:layout_height="1dp"
+                android:layout_gravity="left"
+
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/horario"
+                android:layout_width="215dp"
+                android:layout_height="3dp"
+                android:layout_gravity="left"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="Lunes a viernes 8:00 -19:00."
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

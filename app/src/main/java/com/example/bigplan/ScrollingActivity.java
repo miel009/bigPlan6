@@ -103,10 +103,10 @@ public class ScrollingActivity extends AppCompatActivity {
 
     @SuppressLint("NotifyDataSetChanged")
     private void populatePlaces() {
-        places.add(new Place("Café Villazón", "https://lh3.googleusercontent.com/p/AF1QipNIuAuqiibicc9FGMyFwUPHGu55CXNOpJhhrFfw=w408-h543-k-no"));
-        places.add(new Place("Reserva Costanera Sur", "https://www.lanoticiawebciudad.com.ar/wp-content/uploads/2017/05/Playa-La-Naci%C3%B3n1.jpg"));
-        places.add(new Place("Museo Nacional de Bellas Artes", "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrUhxnrBgpcreHVy18Ff6Q5O77Zwc_TV73mKB--CGQZujY2_OMnHBxslLlxsP6UwCsj0pKQhwvww9-Ynz_G164oUXRob6PJafAPQhhBzDHKrLS9p1CoAe-KmtrstxvnApbeTYo=w408-h306-k-no"));
-        places.add(new Place("Teatro Colón", "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np7sQYdiF_hXHJMx55pYkwKX6uvMVEUjOlMytiafJOvHz8c9l5fnlzzaHQAGBti5airaz_Tvjpz5-z5lX0KE4pPIBM5MZvbyg_KPq_fAj-Ojd66-28DOFJKEkdGAGXYCS4-Pmg5JA=w408-h271-k-no"));
+        places.add(new Place("Café Villazón", "https://lh3.googleusercontent.com/p/AF1QipNIuAuqiibicc9FGMyFwUPHGu55CXNOpJhhrFfw=w408-h543-k-no", "Un café acogedor con ambiente relajado y buena música."));
+        places.add(new Place("Reserva Costanera Sur", "https://www.lanoticiawebciudad.com.ar/wp-content/uploads/2017/05/Playa-La-Naci%C3%B3n1.jpg" , "Espacio verde ideal para caminatas y avistamiento de aves."));
+        places.add(new Place("Museo Nacional de Bellas Artes", "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrUhxnrBgpcreHVy18Ff6Q5O77Zwc_TV73mKB--CGQZujY2_OMnHBxslLlxsP6UwCsj0pKQhwvww9-Ynz_G164oUXRob6PJafAPQhhBzDHKrLS9p1CoAe-KmtrstxvnApbeTYo=w408-h306-k-no", "Exhibe obras de artistas nacionales e internacionales."));
+        places.add(new Place("Teatro Colón", "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np7sQYdiF_hXHJMx55pYkwKX6uvMVEUjOlMytiafJOvHz8c9l5fnlzzaHQAGBti5airaz_Tvjpz5-z5lX0KE4pPIBM5MZvbyg_KPq_fAj-Ojd66-28DOFJKEkdGAGXYCS4-Pmg5JA=w408-h271-k-no", "Uno de los teatros más importantes del mundo, con arquitectura impresionante."));
         adapter.notifyDataSetChanged();
     }
 
