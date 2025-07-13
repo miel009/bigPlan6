@@ -8,13 +8,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 
-public class DetalleActivity extends AppCompatActivity {
+public class DetalleActivity extends BaseActivity {
 
     private WebView webViewMap;
 
@@ -23,14 +24,16 @@ public class DetalleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detalle_activity);
 
-        // Obtener datos del intent
+        // recupera datos del intent
         String nombre = getIntent().getStringExtra("nombre");
         String descripcion = getIntent().getStringExtra("descripcion");
 
-        // Referenciar vistas
         TextView nombreTextView = findViewById(R.id.tvNombreDetalle);
         TextView descripcionTextView = findViewById(R.id.tvDescripcionDetalle);
         Button agregarFavoritosButton = findViewById(R.id.btnAgregarFavoritos);
+
+        setupFooterNavigation();
+
         //mapa
         webViewMap = findViewById(R.id.webViewMap);
 
@@ -56,4 +59,13 @@ public class DetalleActivity extends AppCompatActivity {
             webSettings.setJavaScriptEnabled(true);
             webViewMap.loadUrl(url);
         }
+
+    @Override
+    protected void onSearchClicked() {
+        SearchView searchView = findViewById(R.id.searchView);
+        if (searchView != null) {
+            searchView.setIconified(false);
+            searchView.requestFocus();       // para que el usuario pueda escribir
+        }
+    }
 }

@@ -3,7 +3,6 @@ package com.example.bigplan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,40 +10,42 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.FavoritesViewHolder> {
+public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ViewHolder> {
 
-    private final List<Cafeteria> favorites;
+    private List<FavoritoItem> favorites;
 
-    public FavoritesAdapter(List<Cafeteria> favorites) {
+    public FavoritesAdapter(List<FavoritoItem> favorites) {
         this.favorites = favorites;
-    }
-
-    // ViewHolder para manejar los elementos de la lista
-    public static class FavoritesViewHolder extends RecyclerView.ViewHolder {
-        public final TextView nameTextView;
-
-
-        public FavoritesViewHolder(@NonNull View view) {
-            super(view);
-            nameTextView = view.findViewById(android.R.id.text1);
-        }
     }
 
     @NonNull
     @Override
-    public FavoritesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public FavoritesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(android.R.layout.simple_list_item_1, parent, false);
-        return new FavoritesViewHolder(view);
+                .inflate(R.layout.item_favorito, parent, false); // Asegúrate de tener este layout
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FavoritesViewHolder holder, int position) {
-        holder.nameTextView.setText(favorites.get(position).getNombre());
+    public void onBindViewHolder(@NonNull FavoritesAdapter.ViewHolder holder, int position) {
+        FavoritoItem item = favorites.get(position);
+        holder.nombreText.setText(item.getNombre());
+        holder.descripcionText.setText(item.getDescripcion());
     }
 
     @Override
     public int getItemCount() {
         return favorites.size();
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView nombreText;
+        TextView descripcionText;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            nombreText = itemView.findViewById(R.id.textNombre);
+            descripcionText = itemView.findViewById(R.id.textDescripcion);
+        }
     }
 }

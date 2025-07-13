@@ -13,7 +13,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScrollingActivity extends AppCompatActivity {
+public class ScrollingActivity extends BaseActivity {
 
     private List<Place> places = new ArrayList<>();
     private PlaceAdapter adapter;
@@ -29,6 +29,8 @@ public class ScrollingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrolling);
+
+        setupFooterNavigation();
 
         // para los lugares
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
@@ -51,6 +53,8 @@ public class ScrollingActivity extends AppCompatActivity {
                 filterPlaces(newText);
                 return false;
             }
+
+
         });
 
         // Config del  carrusel
@@ -121,4 +125,15 @@ public class ScrollingActivity extends AppCompatActivity {
         adapter = new PlaceAdapter(this, filtered);
         ((RecyclerView) findViewById(R.id.recyclerView)).setAdapter(adapter);
     }
+
+    @Override
+    protected void onSearchClicked() {
+        SearchView searchView = findViewById(R.id.searchView);
+        if (searchView != null) {
+            searchView.setIconified(false);
+            searchView.requestFocus();       // para que el usuario pueda escribir
+        }
+    }
+
+
 }
