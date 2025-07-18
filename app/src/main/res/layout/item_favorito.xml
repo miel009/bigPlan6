@@ -4,23 +4,25 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:backgroundTint="@android:color/white"
     android:padding="30dp">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="334dp"
         android:layout_height="184dp"
         android:layout_marginEnd="2dp"
-        android:padding="10dp"
+        android:padding="5dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/panerarosa"
+        android:src="@drawable/cafe"
+        android:backgroundTint="@android:color/white"
         app:layout_constraintBottom_toTopOf="@id/footerLayout"
         app:layout_constraintTop_toBottomOf="@id/favoritesTitle"
         app:shapeAppearanceOverlay="@style/ImageRoundedCorners" />
 
     <TextView
         android:id="@+id/textNombre"
-        android:layout_width="334dp"
-        android:layout_height="match_parent"
+        android:layout_width="337dp"
+        android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="Nombre"
         android:textStyle="bold" />
@@ -28,7 +30,7 @@
     <TextView
         android:id="@+id/textDescripcion"
         android:layout_width="337dp"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="Descripción"
         android:visibility="visible" />

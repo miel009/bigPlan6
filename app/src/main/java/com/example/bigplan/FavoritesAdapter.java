@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.imageview.ShapeableImageView;
+
 import java.util.List;
 
 public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ViewHolder> {
@@ -34,6 +36,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
         FavoritoItem item = favorites.get(position);
         holder.nombreText.setText(item.getNombre());
         holder.descripcionText.setText(item.getDescripcion());
+
     }
 
     @Override
@@ -44,9 +47,10 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.View
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView nombreText;
         TextView descripcionText;
-
+        ShapeableImageView imagenUrl;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            imagenUrl = itemView.findViewById(R.id.placeImage);
             nombreText = itemView.findViewById(R.id.textNombre);
             descripcionText = itemView.findViewById(R.id.textDescripcion);
         }

@@ -1,12 +1,12 @@
 package com.example.bigplan;
 public class Place {
     private final String title;
-    private final String imageUrl;
+    private final String imagenUrl;
     private String descripcion;
 
     public Place(String title, String imageUrl, String descripcion) {
         this.title = title;
-        this.imageUrl = imageUrl;
+        this.imagenUrl = imageUrl;
         this.descripcion = descripcion;
     }
 
@@ -14,8 +14,8 @@ public class Place {
         return title;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImagenUrl() {
+        return imagenUrl;
     }
 
     public String getDescripcion() {

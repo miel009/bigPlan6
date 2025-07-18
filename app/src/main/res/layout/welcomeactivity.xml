@@ -15,12 +15,12 @@
 
     <TextView
         android:id="@+id/tvSubtitle"
-        android:layout_width="311dp"
-        android:layout_height="95dp"
-        android:layout_marginTop="216dp"
+        android:layout_width="317dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="232dp"
         android:text="Estás a un click de tu próxima aventura."
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="16.5sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/logoImage" />
@@ -29,27 +29,29 @@
         android:id="@+id/logoImage"
         android:layout_width="464dp"
         android:layout_height="321dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="144dp"
         android:contentDescription="Logo de Big Plan"
         android:src="@drawable/logo1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.326"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/btnArrow"
-        android:layout_width="182dp"
-        android:layout_height="184dp"
-        android:background="?android:attr/selectableItemBackground"
-        android:contentDescription="Flecha para avanzar"
-        android:src="@drawable/ic0"
+        android:layout_width="339dp"
+        android:layout_height="537dp"
+        android:alpha="0.01"
+        android:background="@android:color/transparent"
+        android:contentDescription="Botón invisible y funcional"
+        android:src="@drawable/click"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.663" />
+        app:layout_constraintVertical_bias="0.46" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

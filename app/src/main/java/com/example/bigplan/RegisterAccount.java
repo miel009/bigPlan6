@@ -23,7 +23,7 @@ public class RegisterAccount extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        // ✅ Usá los IDs REALES del XML
+
         etEmail = findViewById(R.id.etEmailCreateAccount);
         etPassword = findViewById(R.id.etPasswordCreateAccount);
         etConfirmPassword = findViewById(R.id.etConfirmPasswordCreateAccount);

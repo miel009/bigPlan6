@@ -43,6 +43,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Mail"
+        android:autofillHints="emailAddress"
         android:inputType="textEmailAddress"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
@@ -69,12 +70,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"/>
+        android:layout_marginEnd="32dp"
+        android:autofillHints="password"
+        />
 
     <!-- Botón para iniciar sesión -->
 
     <!-- Botón para crear cuenta -->
-
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
@@ -83,13 +85,13 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="#FF6600"
-        android:onClick="onClick"
         android:text="Iniciar sesión"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etPassword" />
+
 
     <Button
         android:id="@+id/btnCreateAccount"
