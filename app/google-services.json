@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "877238703229",
+    "project_id": "big-plan6",
+    "storage_bucket": "big-plan6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877238703229:android:e7f72e960804e2afb5cd14",
+        "android_client_info": {
+          "package_name": "com.example.bigplan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC89i1OeMnhl4nlmZFTDdN4pcW25AbGj74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

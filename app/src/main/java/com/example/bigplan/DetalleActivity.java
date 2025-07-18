@@ -27,6 +27,7 @@ public class DetalleActivity extends BaseActivity {
         // recupera datos del intent
         String nombre = getIntent().getStringExtra("nombre");
         String descripcion = getIntent().getStringExtra("descripcion");
+        String imagenUrl = getIntent().getStringExtra("imagenUrl");
 
         TextView nombreTextView = findViewById(R.id.tvNombreDetalle);
         TextView descripcionTextView = findViewById(R.id.tvDescripcionDetalle);
@@ -43,7 +44,7 @@ public class DetalleActivity extends BaseActivity {
 
         // Configurar botón de agregar a favoritos
         agregarFavoritosButton.setOnClickListener(view -> {
-            SharedFavoritos.addFavorito(new FavoritoItem(nombre, descripcion));
+            SharedFavoritos.addFavorito(new FavoritoItem(nombre, descripcion, imagenUrl));
             Toast.makeText(this, "Agregado a Favoritos", Toast.LENGTH_SHORT).show();
             finish();
         });

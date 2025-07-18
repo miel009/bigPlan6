@@ -5,10 +5,12 @@ import java.util.Objects;
 public class FavoritoItem {
     private String nombre;
     private String descripcion;
+    private String imagenUrl;
 
-    public FavoritoItem(String nombre, String descripcion) {
+    public FavoritoItem(String nombre, String descripcion, String imagenUrl) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.imagenUrl=imagenUrl;
     }
 
     public String getNombre() {
@@ -26,6 +28,15 @@ public class FavoritoItem {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    public void setImagenUrl(String imagenUrl) {
+        this.imagenUrl = imagenUrl;
+    }
+
+    public String getImagenUrl() {
+        return imagenUrl;
+    }
+
     // verif contenido de cada variable junto con el hash valida que no se ingrese un favorito igual
     @Override
     public boolean equals(Object o) {

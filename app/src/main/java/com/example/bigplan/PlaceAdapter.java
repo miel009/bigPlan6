@@ -46,8 +46,8 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetalleActivity.class);
             intent.putExtra("nombre", place.getTitle());
-
             intent.putExtra("descripcion", place.getDescripcion());
+            intent.putExtra("imagenUrl", place.getImageUrl());
 
             context.startActivity(intent);
         });

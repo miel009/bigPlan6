@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
-    app:cardCornerRadius="24dp"
+    app:cardCornerRadius="2dp"
     app:cardElevation="2dp"
     android:backgroundTint="#FFD700"
     android:padding="4dp">
@@ -17,7 +17,7 @@
         android:orientation="horizontal"
         android:padding="10dp"
         android:layout_margin="5dp"
-        app:cardCornerRadius="5dp"
+        app:cardCornerRadius="1dp"
         android:background="@drawable/card_background">
 
 

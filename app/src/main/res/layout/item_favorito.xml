@@ -1,19 +1,35 @@
 <!-- res/layout/item_favorito.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="12dp">
+    android:padding="30dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="334dp"
+        android:layout_height="184dp"
+        android:layout_marginEnd="2dp"
+        android:padding="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/panerarosa"
+        app:layout_constraintBottom_toTopOf="@id/footerLayout"
+        app:layout_constraintTop_toBottomOf="@id/favoritesTitle"
+        app:shapeAppearanceOverlay="@style/ImageRoundedCorners" />
 
     <TextView
         android:id="@+id/textNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="334dp"
+        android:layout_height="match_parent"
+        android:padding="10dp"
         android:text="Nombre"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textDescripcion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Descripción" />
+        android:layout_width="337dp"
+        android:layout_height="45dp"
+        android:padding="10dp"
+        android:text="Descripción"
+        android:visibility="visible" />
 </LinearLayout>
